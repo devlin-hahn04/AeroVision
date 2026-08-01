@@ -1,0 +1,38 @@
+                                      Developer
+                                          │
+                                     Git Repository
+                                          │
+                              ┌───────────┴───────────┐
+                              │                       │
+                         Jenkins CI             Azure DevOps
+                    (Build/Test/Package)   (Boards + Pipeline)
+                              │                       │
+                              └───────────┬───────────┘
+                                          │
+                                   Docker / Podman
+                                          │
+        ┌─────────────────────────────────┼─────────────────────────────────┐
+        │                                 │                                 │
+        ▼                                 ▼                                 ▼
+  C++ Telemetry Service              PostgreSQL                    React Ground Control
+        │                                 ▲                                 ▲
+        │                                 │                                 │
+        ├────────────── Stores Telemetry ─┘                                 │
+        ├────────────── REST API ────────────────────────────────────────────┤
+        └────────────── WebSocket ───────────────────────────────────────────┘
+        │
+        ▼
+Python Analytics
+        │
+        ▼
+Streamlit Engineering Dashboard
+
+──────────────────────────────────────────────────────────────────────────────
+
+                     Gazebo
+                        │
+                  PX4 SITL Autopilot
+                        │
+                 MAVLink Telemetry
+                        │
+                C++ Telemetry Service
